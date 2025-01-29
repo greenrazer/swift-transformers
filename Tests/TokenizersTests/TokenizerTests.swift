@@ -9,7 +9,6 @@
 import XCTest
 import Hub
 @testable import Tokenizers
-@testable import Models
 
 class GPT2TokenizerTests: TokenizerTests {
     override class var hubModelName: String? { "distilgpt2" }
@@ -259,7 +258,10 @@ class TokenizerTester {
         get async {
             guard _tokenizer == nil else { return _tokenizer! }
             do {
-                guard let tokenizerConfig = try await configuration!.tokenizerConfig else { throw "Cannot retrieve Tokenizer configuration" }
+                guard let tokenizerConfig = try await configuration!.tokenizerConfig else {
+                    XCTFail("Cannot retrieve Tokenizer configuration")
+                    return nil 
+                }
                 let tokenizerData = try await configuration!.tokenizerData
                 _tokenizer = try AutoTokenizer.from(tokenizerConfig: tokenizerConfig, tokenizerData: tokenizerData)
             } catch {
