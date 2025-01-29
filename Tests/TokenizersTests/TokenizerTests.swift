@@ -260,7 +260,7 @@ class TokenizerTester {
             do {
                 guard let tokenizerConfig = try await configuration!.tokenizerConfig else {
                     XCTFail("Cannot retrieve Tokenizer configuration")
-                    return nil 
+                    return nil
                 }
                 let tokenizerData = try await configuration!.tokenizerData
                 _tokenizer = try AutoTokenizer.from(tokenizerConfig: tokenizerConfig, tokenizerData: tokenizerData)
