@@ -1,4 +1,6 @@
 import XCTest
+
+@testable import TokenizersCore
 @testable import Tokenizers
 @testable import Hub
 

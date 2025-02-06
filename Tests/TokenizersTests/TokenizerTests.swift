@@ -8,6 +8,7 @@
 
 import XCTest
 import Hub
+@testable import TokenizersCore
 @testable import Tokenizers
 @testable import Models
 

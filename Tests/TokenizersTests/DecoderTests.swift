@@ -6,6 +6,7 @@
 
 import XCTest
 import Hub
+@testable import TokenizersCore
 @testable import Tokenizers
 
 class DecoderTests: XCTestCase {

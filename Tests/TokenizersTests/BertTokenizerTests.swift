@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import TokenizersCore
 @testable import Tokenizers
 
 
